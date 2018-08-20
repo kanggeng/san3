@@ -1,2 +1,250 @@
 # san3
-hanya kumpulan tools kecil
+hanya kumpulan tools kecilclear
+
+sleep 2.0
+
+
+ec="echo"
+ece="echo -e"
+a="\033[37m"
+b="\033[32m"
+c="\033[35m"
+s="echo"
+d="echo -e"
+r="\033[34m"
+$ece $b "
+ █▄░▄█ █░█ █░░ ▀█▀ ▀ ▀█▀ ▄▀▄ ▄▀▄ █░░ ▄▀▀
+ █░█░█ █░█ █░▄ ░█░ █ ░█░ █░█ █░█ █░▄ ░▀▄
+ ▀░░░▀ ░▀░ ▀▀▀ ░▀░ ▀ ░▀░ ░▀░ ░▀░ ▀▀▀ ▀▀░
+"
+$ece $c "       👻 by mas sugenk slj 👻 "
+
+$ec
+$ec
+$ec "👉 pastikan sudah install package yg dibutuhkan ,python,"
+$ec "👉 python2 pip,mechanize,ncurses-utils,wget,git,dll "
+$ece $r
+$ec "[$]apa yg ingin anda install👇"
+$ec 
+$ec "[1] sudo"
+$ec "[2] weeman"
+$ec "[3] ngrok"
+$ec "[4] bootkoment fb "
+$ec "[5] metasploit "
+$ec "[6] mbf "
+$ec "[7] ipgeolocation"
+$ec "[8] menjalankan tols "
+$ece $b
+
+read -p  "pilih satu 👉 " ok
+
+
+
+if [ $ok == 1 ] ; then
+sleep 1.6
+git clone https://gitlab.com/st42/termux-sudo
+sleep 1.6
+cd termux-sudo
+
+ls
+sleep 1.6
+apt install ncurses-utils
+sleep 1.6
+cat sudo > /data/data/com.termux/files/usr/bin/sudo
+
+ls
+sleep 1.6
+chmod 700 /data/data/com.termux/files/usr/bin/sudo
+
+ls 
+
+
+exit
+
+
+
+elif  [ $ok == 2 ] ; then
+sleep 1.0
+git clone https://github.com/evait-security/weeman.git
+sleep 1.0
+cd weeman
+ls 
+$ec
+$ec
+$ece $c  "ketik python2 weeman.py untuk memulainya " 
+$ec
+$ec
+$ec "set url (url yg tampil di web fishing)"
+$ec "set action_url (url web tujuan setelah login)"
+$ec "set port (untuk mencocokkan port dengan local host)" 
+$ec "run (jalnkan)"
+$ec
+$ec "gunakan ngrok /serveo.net agar bisa di akses orang lain"
+$ec "saran we pake serveo net ( autossh -M 0 -R 
+example.serveo.net:80:localhost:8080 serveo.net ) jangan lupa pkg 
+install autossh"
+
+exit
+
+elif [ $ok == 3 ] ; then
+
+$ece $r 
+$ec "install wget dulu y bung "
+$ec
+$ec
+sleep 2.0
+
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+
+unzip ngrok-stable-linux-arm.zip
+$ec 
+
+$ec "        ATTENTION !"
+$ec
+$ec
+$ec "daftar dulu di ngrok .. kemudian ikuti langkah di websitnya " 
+$ec
+$ec "tinggal ketik ./ngrok http 8080" 
+
+$ec 
+$ec 
+$ec "     DONE !"
+
+exit
+
+elif [ $ok == 4 ] ; then 
+
+git clone https://github.com/Senitopeng/Botkomena.git
+
+$ec 
+$ec 
+cd Botkomena
+ls
+$ece $c  "kalo mau jalaninya ketik python2 botkomena.py"
+$ec
+$ec
+$ec " masukan imel dan sandi , dan kalau check point ulangi 
+lagi , kalo mau rubah komentar nya pake editor nano (pkg 
+install nano )  pada file msg.txt " 
+
+exit
+ 
+elif [ $ok == 5 ] ; then
+
+pkg install curl
+
+curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
+chmod +x metasploit.sh
+
+./metasploit.sh
+
+exit
+
+elif [ $ok == 6 ] ; then
+
+git clone https://github.com/tikuskecil/multi-bruteforce-facebook
+
+cd multi-bruteforce-facebook
+
+ls
+
+$ec
+$ec
+$ec "ketik python2 MBF.py"
+
+exit
+
+elif [ $ok == 7 ] ; then 
+
+git clone https://github.com/maldevel/IPGeolocation/
+
+
+cd IPGeolocation
+
+mv ipgeolocation.py main.py
+
+chmod +x main.py
+ls
+
+
+pip install -r requirements.txt
+
+$ec " untuk memulai ketik di shell ./main.py  -h" 
+cd IPGeolocation
+
+ls
+
+elif [ $ok == 8 ] ; then
+$ec "apa yang ingin kau jalankan 👇" 
+$ec "[1] weeman"
+$ec "[2] ipgeolocation"
+$ec "[3] mbf "
+$ec "[4] boot komen "
+$ec "[5] ngrok "
+$ec "[6] serveo.net"
+read -p "pilih 👇" bis
+
+if [ $bis == 1 ] ; then 
+
+cd weeman 
+
+python2 weeman.py
+fi
+
+if [ $bis == 2 ] ; then 
+
+cd IPGeolocation 
+
+python main.py 
+
+fi
+
+if [ $bis == 3 ] ; then
+
+cd multi-bruteforce-facebook
+
+python2 MBF.py
+
+fi
+
+if [ $bis == 4 ] ; then 
+
+cd Botkomena
+
+python2 botkomena.py
+
+fi
+
+if [ $bis == 5 ] ; then 
+
+$ec "masukkan tokken kemudian ketik ./ngrok http 8080"
+
+fi
+
+if [ $bis == 6 ] ; then 
+
+$ec "pastikan ssh, autossh sudah terinstall dan saya seting 
+portnya 8080 "
+$ece $r "setelah HTTP treffic itu adalah url forwaddingnya" 
+$ece $c 
+s="echo"
+b="echo -e"
+
+$b "silakan atur dulu "
+
+$b
+
+read -p "setel url  : " ip
+read -p "setel port : " ho
+
+$b
+
+autossh -M 0 -R $ip:80:localhost:$ho serveo.net
+
+fi 
+exit
+else 
+
+$ece $c "masukan input yg benar ! " 
+fi
+
